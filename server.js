@@ -77,13 +77,15 @@ app.post('/surveyresponse', function(req,res){
 
 // declare the body parser stuff as easy to remember variable  names
 
-  var q1 = req.body.question1;
-  var q2 = req.body.question2;
-  var q3 = req.body.question3;
-  var q4 = req.body.question4;
-  var q5 = req.body.question5;
-var test = req.query.fname;
-console.log( q1 + q2 + q3 + q4 + q5 + test);
+  var q1 = parseInt(req.body.question1);
+  var q2 = parseInt(req.body.question2);
+  var q3 = parseInt(req.body.question3);
+  var q4 = parseInt(req.body.question4);
+  var q5 = parseInt(req.body.question5);
+
+var score =  q1 + q2 + q3 + q4 + q5 ;
+
+
 
 
 
@@ -91,59 +93,47 @@ console.log( q1 + q2 + q3 + q4 + q5 + test);
 // create a connection to the database so  i can update the table
 connection.getConnection(function(err){
   if(err) throw err;
-  console.log('connected on events route');
-  // var sql = "INSERT INTO wings ("+q01 + )"+"';"
-  // console.log(sql);
-  // connection.query(sql, function(err, result){
-  //   if (err) throw err
-  //   console.log('updated the event route vars to the DB successfully.');
-  //      });
+  console.log('connected on surveyresults route');
+ var sql = "SELECT * from wings;";
+  console.log(sql);
+  connection.query(sql, function(err, result){
+    if (err) throw err
+    console.log('updated the event route vars to the DB successfully.');
+    console.log(score);
+    function pair(result, score){
+      if(score == 0){
+        console.log("your sauce is: " + result[1].sauce)
+        return(result[0].sauce)
+      }else if(score == 1 ){
+        console.log("your sauce is: " + result[6].sauce)
+        return(result[6].sauce)
+      }else if(score == 2){
+        console.log("your sauce is: " + result[6].sauce)
+        return(result[6].sauce)
+      }else if(score == 3 ){
+        console.log("your sauce is: " + result[6].sauce)
+        return(result[6].sauce)
+      }else if(score == 4 ){
+        console.log("your sauce is: " + result[4].sauce)
+        return(result[4].sauce)
+      }else if(score == 5 ){
+        console.log("your sauce is: " + result[2].sauce)
+        return(result[2].sauce)
+      }else if(score == 6 ){
+        console.log("your sauce is: " + result[3].sauce)
+        return(result[3].sauce)
+      }else if(score == 7 ){
+        console.log("your sauce is: " + result[3].sauce)
+        return(result[2].sauce)
+      }
+    }
+    pair(result,score);
+    res.render('resultspage',{
+      sauce: pair(result,score)
+    })
+  });
    });
 
-//
-//   // construct our json object  structure
-//  var formObject = {
-//    name: fullname,
-//   questions: [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10]
-// };
-//
-// console.log(formObject);
-//
-// // we are going to use this section on another route to show the world our json response.
-//
-// var textdb = fs.readFileSync('db.json', 'utf8');
-// console.log('read thefile');
-// console.log(textdb);
-// // var db = require(__dirname + '/db.json');
-//
-// //send the db.txt file to the api page (route) to show file contents to the world.
-// var freshjson = JSON.parse(textdb);
-//
-// console.log('parsed the file into json' + typeof freshjson)
-//
-//  freshjson.push(formObject);
-// console.log('pushed to the new array');
-// console.log(freshjson);
-// //using the fs module to save the object we made above into a txt file which will act as a makeshift database.
-//
-// var restring = JSON.stringify(freshjson);
-// //
-// fs.writeFile('db.json', restring, function(err){
-//   if(err) throw err;
-//    console.log('restring was saved to db.json.');
-//  });
-//  console.log('appended array to json file');
-//
-//
-//  //we are now going to use the data that we got and compare it to each other (the main point of this app)
-//
-//  // function compare(recently_submitted_data, rest_of_our_json){
-//  //   for(var i = 0; i < formObject.questions.length; i++){
-//  //
-//  //   }
-//  // }
-//
-//
 
 });
 

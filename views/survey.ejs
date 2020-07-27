@@ -3,6 +3,7 @@
     <title>test form</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/styles1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
@@ -10,7 +11,8 @@
     <h1><center>Survey!</center> </h1>
     <form id="myform" action="/surveyresponse" method="post">
 <center>
-<input type="hidden" value= <%-fname %> name="fname" id="fname" />
+
+
 
       <div class="container mt-5">
     <div class="row">
@@ -28,32 +30,28 @@
           <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
 
           <p>
-            How do you handle hot flavors?
+            How do you like your hot sauce?
           </p>
         </div>
         <hr>
         <p class="text-center">Your rating:</p>
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question1" type="radio" id="radio-179" value="1" checked>
-          <label class="form-check-label" for="radio-179">Very good</label>
+          <input class="form-check-input" name="question1" type="radio" id="radio-179" value="0" checked>
+          <label class="form-check-label" for="radio-179">Mild</label>
         </div>
 
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question1" type="radio" id="radio-279" value="2">
-          <label class="form-check-label" for="radio-279">Good</label>
+          <input class="form-check-input" name="question1" type="radio" id="radio-279" value="1">
+          <label class="form-check-label" for="radio-279">Spicy</label>
         </div>
 
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question1" type="radio" id="radio-379" value="3">
-          <label class="form-check-label" for="radio-379">Mediocre</label>
+          <input class="form-check-input" name="question1" type="radio" id="radio-379" value="2">
+          <label class="form-check-label" for="radio-379">Hot</label>
         </div>
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question1" type="radio" id="radio-479" value="4">
-          <label class="form-check-label" for="radio-479">Bad</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question1" type="radio" id="radio-579" value="5">
-          <label class="form-check-label" for="radio-579">Very bad</label>
+          <input class="form-check-input" name="question1" type="radio" id="radio-479" value="3">
+          <label class="form-check-label" for="radio-479">Vicious</label>
         </div>
         <!-- Radio -->
       </div>
@@ -81,32 +79,19 @@
           <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
 
           <p>
-            What Do you think about BBQ sauce?
+            Do you prefer pepper-like tastes or BBQ sauce-like tastes?
           </p>
         </div>
         <hr>
         <p class="text-center">Your rating:</p>
         <div class="form-check mb-4">
           <input class="form-check-input" name="question2" type="radio" id="radio-179" value="1" checked>
-          <label class="form-check-label" for="radio1">Very good</label>
+          <label class="form-check-label" for="radio1">Pepper</label>
         </div>
 
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question2" type="radio" id="radio-279" value="2">
-          <label class="form-check-label" for="radio2">Good</label>
-        </div>
-
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question2" type="radio" id="radio-379" value="3">
-          <label class="form-check-label" for="radio3">Mediocre</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question2" type="radio" id="radio-479" value="4">
-          <label class="form-check-label" for="radio4">Bad</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question2" type="radio" id="radio-579" value="5">
-          <label class="form-check-label" for="radio5">Very bad</label>
+          <input class="form-check-input" name="question2" type="radio" id="radio-279" value="0">
+          <label class="form-check-label" for="radio2">BBQ</label>
         </div>
         <!-- Radio -->
       </div>
@@ -136,32 +121,19 @@
           <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
 
           <p>
-            How do you handle hot flavors?
+            Do you like a challenge?
           </p>
         </div>
         <hr>
         <p class="text-center">Your rating:</p>
         <div class="form-check mb-4">
           <input class="form-check-input" name="question3" type="radio" id="radio-179" value="1" checked>
-          <label class="form-check-label" for="radio-179">Very good</label>
+          <label class="form-check-label" for="radio-179">Yes</label>
         </div>
 
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question3" type="radio" id="radio-279" value="2">
-          <label class="form-check-label" for="radio-279">Good</label>
-        </div>
-
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question3" type="radio" id="radio-379" value="3">
-          <label class="form-check-label" for="radio-379">Mediocre</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question3" type="radio" id="radio-479" value="4">
-          <label class="form-check-label" for="radio-479">Bad</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question3" type="radio" id="radio-579" value="5">
-          <label class="form-check-label" for="radio-579">Very bad</label>
+          <input class="form-check-input" name="question3" type="radio" id="radio-279" value="0">
+          <label class="form-check-label" for="radio-279">No</label>
         </div>
         <!-- Radio -->
       </div>
@@ -189,32 +161,19 @@
           <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
 
           <p>
-            How do you handle hot flavors?
+            Do you like burning adrenaline?
           </p>
         </div>
         <hr>
         <p class="text-center">Your rating:</p>
         <div class="form-check mb-4">
           <input class="form-check-input" name="question4" type="radio" id="radio-179" value="1" checked>
-          <label class="form-check-label" for="radio-179">Very good</label>
+          <label class="form-check-label" for="radio-179">Yes</label>
         </div>
 
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question4" type="radio" id="radio-279" value="2">
-          <label class="form-check-label" for="radio-279">Good</label>
-        </div>
-
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question4" type="radio" id="radio-379" value="3">
-          <label class="form-check-label" for="radio-379">Mediocre</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question4" type="radio" id="radio-479" value="4">
-          <label class="form-check-label" for="radio-479">Bad</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question4" type="radio" id="radio-579" value="5">
-          <label class="form-check-label" for="radio-579">Very bad</label>
+          <input class="form-check-input" name="question4" type="radio" id="radio-279" value="0">
+          <label class="form-check-label" for="radio-279">No</label>
         </div>
         <!-- Radio -->
       </div>
@@ -243,32 +202,19 @@
           <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
 
           <p>
-            How do you handle hot flavors?
+            Do you like Habanero or Peppers more?
           </p>
         </div>
         <hr>
         <p class="text-center">Your rating:</p>
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question5" type="radio" id="radio-179" value="1" checked>
-          <label class="form-check-label" for="radio-179">Very good</label>
+          <input class="form-check-input" name="question5" type="radio" id="radio-179" value="0" checked>
+          <label class="form-check-label" for="radio-179">Habanero</label>
         </div>
 
         <div class="form-check mb-4">
-          <input class="form-check-input" name="question5" type="radio" id="radio-279" value="2">
-          <label class="form-check-label" for="radio-279">Good</label>
-        </div>
-
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question5" type="radio" id="radio-379" value="3">
-          <label class="form-check-label" for="radio-379">Mediocre</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question5" type="radio" id="radio-479" value="4">
-          <label class="form-check-label" for="radio-479">Bad</label>
-        </div>
-        <div class="form-check mb-4">
-          <input class="form-check-input" name="question5" type="radio" id="radio-579" value="5">
-          <label class="form-check-label" for="radio-579">Very bad</label>
+          <input class="form-check-input" name="question5" type="radio" id="radio-279" value="1">
+          <label class="form-check-label" for="radio-279">Pepper</label>
         </div>
         <!-- Radio -->
         <br>
