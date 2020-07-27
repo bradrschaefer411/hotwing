@@ -143,9 +143,10 @@ connection.getConnection(function(err){
       }
     }
     pair(result,score);
-    res.render('resultspage',{
-      sauce: pair(result,score)
-    })
+    // res.render('resultspage',{
+    //   sauce: pair(result,score)
+    // })
+    res.json(result)
   });
    });
 
