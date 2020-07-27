@@ -29,15 +29,30 @@ app.use(bodyparser.urlencoded({
 //includes the public folder of our app
  app.use(express.static(path.join(__dirname,'/public')));
 
- var connection =  mysql.createPool({
-   connectionLimit: 20,
-   host: creds.database.host,
-   port: creds.database.port,
-   user: creds.database.username,
-   password: creds.database.password,
-   database: creds.database.database,
+ let connection;
+ if (process.env.JAWSDB_URL) {
+   connection = mysql.createConnection(process.env.JAWSDB_URL);
+ } else {
+   connection = mysql.createPool({
+    connectionLimit: 20,
+    host: creds.database.host,
+    port: creds.database.port,
+    user: creds.database.username,
+    password: creds.database.password,
+    database: creds.database.database,
+ 
+  });
+ }
 
- });
+//  var connection =  mysql.createPool({
+//    connectionLimit: 20,
+//    host: creds.database.host,
+//    port: creds.database.port,
+//    user: creds.database.username,
+//    password: creds.database.password,
+//    database: creds.database.database,
+
+//  });
 
 //Define the routes
 
